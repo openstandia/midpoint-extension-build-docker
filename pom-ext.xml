@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>jp.openstandia.midpoint</groupId>
+        <artifactId>midpoint-extension-build-base</artifactId>
+        <version>1.0.0</version>
+        <relativePath>./pom.xml</relativePath>
+    </parent>
+
+    <artifactId>midpoint-extension-build-ext</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.source.version>1.8</project.source.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.keycloak-grpc>0.2.0</version.keycloak-grpc>
+        <version.midpoint-grpc>0.5.0</version.midpoint-grpc>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>keycloak-grpc</id>
+            <name>keycloak-grpc Releases</name>
+            <url>https://raw.githubusercontent.com/openstandia/keycloak-grpc/mvn-repo/</url>
+        </repository>
+        <repository>
+            <id>midpoint-grpc</id>
+            <name>midpoint-grpc Releases</name>
+            <url>https://raw.githubusercontent.com/openstandia/midpoint-grpc/mvn-repo/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>jp.openstandia.keycloak.grpc</groupId>
+            <artifactId>keycloak-grpc-admin-services</artifactId>
+            <version>${version.keycloak-grpc}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jp.openstandia.keycloak.grpc</groupId>
+            <artifactId>keycloak-grpc-client-spi</artifactId>
+            <version>${version.keycloak-grpc}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jp.openstandia.midpoint.grpc</groupId>
+            <artifactId>midpoint-grpc-self-services</artifactId>
+            <version>${version.midpoint-grpc}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>jp.openstandia.midpoint.grpc</groupId>
+            <artifactId>midpoint-grpc-server</artifactId>
+            <version>${version.midpoint-grpc}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+</project>
